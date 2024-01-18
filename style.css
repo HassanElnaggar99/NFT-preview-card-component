@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* ## Colors */
+  /* ### Primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  /* ### Neutral */
+  --very-dark-blue-1: hsl(217, 54%, 11%);    /* (main BG) */
+  --very-dark-blue-2: hsl(216, 50%, 16%);    /* (card BG) */
+  --very-dark-blue-3: hsl(215, 32%, 27%);    /* (line) */
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  display: grid;
+  place-content: center;
+  background-color: var(--very-dark-blue-1);
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding: 20px;
+  max-width: 325px;
+  background-color: var(--very-dark-blue-2);
+  color: var(--soft-blue);
+  border-radius: 20px;
+  box-shadow:
+    0 9px 0 16px hsl(217.24deg 54.72% 10.39%),
+    0 20px 20px 20px hsl(215.63deg 57.14% 10.98%);
+
+  }
+.container > * {
+  margin: 20px 0;
+}
+#thumbnail {
+  width: 285px;
+  height: 285px;
+  border-radius: 10px;
+  margin: 0;
+  position: relative;
+  background: url("images/image-equilibrium.jpg") no-repeat;
+  background-size: cover;
+}
+#thumbnail:hover::after{
+  content: "";
+  width: 285px;
+  height: 285px;
+  border-radius: 10px;
+  background-color: hsl(178, 100%, 50%, 0.5);
+  background-image: url("images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+h2 {
+  color: var(--white);
+  font-weight: 600;
+}
+h2:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+.description {
+  line-height: 1.6;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--very-dark-blue-3);
+  padding-bottom: 20px;
+}
+.cash {
+  color: var(--cyan);
+  font-weight: 600;
+}
+.cash::before {
+  content: url("images/icon-ethereum.svg");
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.time-left::before {
+  content: url("images/icon-clock.svg");
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.credits {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.credits img {
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+.credits p {
+  font-weight: 300;
+}
+.credits span {
+  color: var(--white)
+}
+.credits span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
